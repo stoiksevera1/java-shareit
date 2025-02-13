@@ -33,8 +33,5 @@ public class UserService {
         return UserMappers.toDto(userStorage.delUser(id));
     }
 
-    private boolean checkName(User user) {
-        return user.getName() == null || user.getName().isEmpty();
-    }
 }
 
