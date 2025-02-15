@@ -13,5 +13,6 @@ public class UserDto {
     @NotBlank(message = "email Не может быть пустым")
     @Email(message = "Неправильно введен email")
     String email;
+    @NotBlank(message = "Имя Не может быть пустым")
     String name;
 }
