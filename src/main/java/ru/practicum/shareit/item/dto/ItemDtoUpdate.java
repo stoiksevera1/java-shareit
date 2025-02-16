@@ -1,16 +1,14 @@
-package ru.practicum.shareit.item.model;
+package ru.practicum.shareit.item.dto;
 
+
+import jakarta.validation.constraints.NotNull;
 import lombok.Builder;
 import lombok.Data;
 import ru.practicum.shareit.request.ItemRequest;
-import ru.practicum.shareit.user.User;
 
-/**
- * TODO Sprint add-controllers.
- */
 @Builder
 @Data
-public class Item {
+public class ItemDtoUpdate {
     Long id;
     String name;
     String description;
@@ -18,3 +16,4 @@ public class Item {
     Long owner;
     ItemRequest request;
 }
+

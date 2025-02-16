@@ -4,7 +4,7 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import ru.practicum.shareit.user.dto.UserDto;
-import ru.practicum.shareit.user.dto.UserDtoWithOutEmail;
+import ru.practicum.shareit.user.dto.UserDtoUpdate;
 
 /**
  * TODO Sprint add-controllers.
@@ -27,7 +27,7 @@ public class UserController {
 
 
     @PatchMapping("/{userId}")
-    public UserDto updateUser(@PathVariable("userId") Long userId, @Valid @RequestBody UserDtoWithOutEmail newUser) {
+    public UserDto updateUser(@PathVariable("userId") Long userId, @Valid @RequestBody UserDtoUpdate newUser) {
         return userService.updateUser(userId, newUser);
     }
 

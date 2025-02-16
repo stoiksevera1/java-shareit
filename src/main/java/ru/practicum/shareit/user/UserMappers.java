@@ -1,7 +1,7 @@
 package ru.practicum.shareit.user;
 
 import ru.practicum.shareit.user.dto.UserDto;
-import ru.practicum.shareit.user.dto.UserDtoWithOutEmail;
+import ru.practicum.shareit.user.dto.UserDtoUpdate;
 
 public class UserMappers {
     public static UserDto toDto(User model) {
@@ -20,7 +20,7 @@ public class UserMappers {
                 .build();
     }
 
-    public static User toModelWithOutEmail(UserDtoWithOutEmail dto) {
+    public static User toModel(UserDtoUpdate dto) {
         return User.builder()
                 .id(dto.getId())
                 .name(dto.getName())

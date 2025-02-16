@@ -6,7 +6,7 @@ import lombok.Data;
 
 @Builder
 @Data
-public class UserDtoWithOutEmail {
+public class UserDtoUpdate {
         Long id;
         @Email(message = "Неправильно введен email")
         String email;

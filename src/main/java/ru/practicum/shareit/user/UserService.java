@@ -4,7 +4,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import ru.practicum.shareit.user.dto.UserDto;
-import ru.practicum.shareit.user.dto.UserDtoWithOutEmail;
+import ru.practicum.shareit.user.dto.UserDtoUpdate;
 
 
 @Slf4j
@@ -15,7 +15,6 @@ public class UserService {
 
     public UserDto createUser(UserDto userDto) {
         User user = UserMappers.toModel(userDto);
-
         return UserMappers.toDto(userStorage.add(user));
     }
 
@@ -24,8 +23,8 @@ public class UserService {
     }
 
 
-    public UserDto updateUser(Long id, UserDtoWithOutEmail newUser) {
-        User user = UserMappers.toModelWithOutEmail(newUser);
+    public UserDto updateUser(Long id, UserDtoUpdate newUser) {
+        User user = UserMappers.toModel(newUser);
         return UserMappers.toDto(userStorage.update(id, user));
     }
 
