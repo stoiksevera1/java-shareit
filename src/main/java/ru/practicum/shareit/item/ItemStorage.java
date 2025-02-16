@@ -1,6 +1,5 @@
 package ru.practicum.shareit.item;
 
-import ru.practicum.shareit.item.dto.ItemDtoList;
 import ru.practicum.shareit.item.model.Item;
 
 import java.util.List;

@@ -87,7 +87,7 @@ public class InMemoryItemStorage implements ItemStorage {
         List<Item> itemList = new ArrayList<>();
         if (!text.isEmpty()) {
             for (Item item : items.values()) {
-                if(item.getAvailable()) {
+                if (item.getAvailable()) {
                     if (item.getName().toLowerCase().contains(text.toLowerCase())) {
                         itemList.add(item);
                     } else if (item.getDescription().toLowerCase().contains(text.toLowerCase())) {

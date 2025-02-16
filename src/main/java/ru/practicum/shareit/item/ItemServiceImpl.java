@@ -46,7 +46,7 @@ public class ItemServiceImpl implements ItemService {
     public ItemDto addItem(Long userId, ItemDto itemDto) {
         checkUser(userId);
         itemDto.setOwner(userId);
-       return ItemMappers.toDto(itemStorage.add(ItemMappers.toModel(itemDto)));
+        return ItemMappers.toDto(itemStorage.add(ItemMappers.toModel(itemDto)));
 
     }
 
