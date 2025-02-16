@@ -15,12 +15,6 @@ public class ErrorHandler {
     }
 
 
-    @ExceptionHandler({ValidationException.class, jakarta.validation.ValidationException.class})
-    @ResponseStatus(HttpStatus.BAD_REQUEST)
-    public ErrorResponse validationException() {
-        return new ErrorResponse("error", "Не коректно введены данные");
-    }
-
 }
 
 
