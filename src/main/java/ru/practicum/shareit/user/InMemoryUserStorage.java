@@ -27,8 +27,8 @@ public class InMemoryUserStorage implements UserStorage {
 
 
     public User add(User user) {
-        checkEmail(user);
         user.setId(getNextId());
+        checkEmail(user);
         users.put(user.getId(), user);
         log.warn("Успешное добавление данных пользователя");
         return user;
@@ -47,9 +47,7 @@ public class InMemoryUserStorage implements UserStorage {
         if (newUser.getName() == null) {
             newUser.setName(users.get(id).getName());
         }
-        if (!newUser.getEmail().equals(users.get(id).getEmail())) {
-            checkEmail(newUser);
-        }
+        checkEmail(newUser);
         users.remove(id);
         users.put(id, newUser);
         log.info("Успешное обновление данных пользователя");
@@ -80,6 +78,7 @@ public class InMemoryUserStorage implements UserStorage {
 
     private void checkEmail(User user) {
         if (users.values().stream()
+                .filter(user1 -> !user1.id.equals(user.id))
                 .anyMatch(user1 -> user1.email.equals(user.email))) {
             log.warn("Ошибка добавления емайла");
             throw new ValidationException("Такой емаил уже существует");

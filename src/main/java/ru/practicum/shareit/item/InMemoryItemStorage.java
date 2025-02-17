@@ -24,10 +24,6 @@ public class InMemoryItemStorage implements ItemStorage {
             log.warn("Предмет c ID {} не найден", idItem);
             throw new NotFoundException("Предмет c ID" + idItem + "не найден");
         }
-        if (!userId.equals(items.get(idItem).getOwner())) {
-            log.warn("Предмет {}не принадлежит  пользователю {}", idItem, userId);
-            throw new ValidationException("Предмет " + idItem + "не принадлежит  пользователю " + userId);
-        }
         log.warn("Предмет успешно найден");
         return items.get(idItem);
 
